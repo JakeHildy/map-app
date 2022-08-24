@@ -6,10 +6,10 @@ const Map = () => {
   const [total, setTotal] = useState(null);
 
   const getCustomerAddresses = async () => {
-    const response = await axios.get(`http://localhost:3000/v1/customer`, {
+    const response = await axios.get(`https://api.commerce7.com/v1/customer`, {
       headers: {
-        Authorization: "Basic bWFwLWFwcDphcHBzZWNyZXQkOTE=",
-        tenant: "development",
+        Authorization: `Basic ${process.env.REACT_APP_API_AUTH}`,
+        tenant: "jacob-sandbox-account",
       },
     });
     setCustomers(response.data.customers);
