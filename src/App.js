@@ -1,13 +1,10 @@
-import axios from "axios";
+import Map from "./components/Map";
 
 const App = () => {
-  const getCustomerAddresses = async () => {
-    axios.get(``);
-  };
-
   return (
     <div className="App">
       <h1>Map App</h1>
+      <Map />
     </div>
   );
 };
