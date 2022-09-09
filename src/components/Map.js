@@ -3,6 +3,8 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 import axios from "axios";
 
+import { getAuthorization } from "../utils/apiHelper";
+
 const Map = () => {
   const [customerAddresses, setCustomers] = useState(null);
   const [markerLocations, setMarkerLocations] = useState(null);
@@ -17,7 +19,7 @@ const Map = () => {
       `https://api.commerce7.com/v1/customer-address`,
       {
         headers: {
-          Authorization: `Basic ${process.env.REACT_APP_API_AUTH}`,
+          Authorization: `Basic ${getAuthorization()}`,
           tenant: "jacob-sandbox-account",
         },
       }
