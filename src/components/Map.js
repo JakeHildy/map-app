@@ -19,7 +19,7 @@ const Map = () => {
       `https://api.commerce7.com/v1/customer-address`,
       {
         headers: {
-          Authorization: `Basic ${getAuthorization()}`,
+          Authorization: `Basic ${process.env.REACT_APP_SECRET_KEY}`,
           tenant: "jacob-sandbox-account",
         },
       }
